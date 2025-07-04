@@ -378,7 +378,7 @@ function initializeLazyLoading() {
 // Initialize lazy loading when DOM is ready
 document.addEventListener('DOMContentLoaded', initializeLazyLoading);
 
-// Add custom cursor effect (optional)
+// Add custom cursor effect (optional) - Optimized for smooth performance
 function initializeCustomCursor() {
     const cursor = document.createElement('div');
     cursor.className = 'custom-cursor';
@@ -391,32 +391,55 @@ function initializeCustomCursor() {
         pointer-events: none;
         z-index: 9999;
         opacity: 0;
-        transition: all 0.1s ease;
         mix-blend-mode: difference;
+        will-change: transform;
+        transition: opacity 0.2s ease, transform 0.15s ease;
     `;
     
     document.body.appendChild(cursor);
     
+    let mouseX = 0;
+    let mouseY = 0;
+    let isVisible = false;
+    
+    // Update mouse position
     document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX - 10 + 'px';
-        cursor.style.top = e.clientY - 10 + 'px';
-        cursor.style.opacity = '0.7';
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        if (!isVisible) {
+            isVisible = true;
+            cursor.style.opacity = '0.7';
+        }
     });
     
+    // Hide cursor when mouse leaves
     document.addEventListener('mouseleave', () => {
+        isVisible = false;
         cursor.style.opacity = '0';
     });
+    
+    // Smooth cursor animation using requestAnimationFrame
+    function animateCursor() {
+        if (isVisible) {
+            cursor.style.transform = `translate(${mouseX - 10}px, ${mouseY - 10}px)`;
+        }
+        requestAnimationFrame(animateCursor);
+    }
+    
+    // Start the animation loop
+    animateCursor();
     
     // Add hover effects for interactive elements
     const interactiveElements = document.querySelectorAll('a, button, .project-card, .blog-card');
     interactiveElements.forEach(element => {
         element.addEventListener('mouseenter', () => {
-            cursor.style.transform = 'scale(1.5)';
+            cursor.style.transform = `translate(${mouseX - 10}px, ${mouseY - 10}px) scale(1.5)`;
             cursor.style.background = 'var(--primary-light)';
         });
         
         element.addEventListener('mouseleave', () => {
-            cursor.style.transform = 'scale(1)';
+            cursor.style.transform = `translate(${mouseX - 10}px, ${mouseY - 10}px) scale(1)`;
             cursor.style.background = 'var(--primary)';
         });
     });
