@@ -97,7 +97,11 @@ This is a full-stack web application for a robotics engineer's portfolio. The pr
 
 ```
 Changelog:
-- July 04, 2025. Initial setup
+- July 04, 2025. Initial setup with robotics portfolio website
+- July 04, 2025. Added Bear Blog integration with API endpoints
+- July 04, 2025. Fixed Progress component React warning
+- July 04, 2025. Added comprehensive deployment documentation
+- July 04, 2025. Project ready for GitHub deployment
 ```
 
 ## User Preferences
