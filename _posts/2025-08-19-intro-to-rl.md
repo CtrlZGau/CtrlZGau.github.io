@@ -3,7 +3,7 @@ title: Introduction to Reinforcement Learning
 date: 2025-06-10 00:00:00 +0800
 categories: [Blog, Robotics]
 tags: [learning, rl]     
-author: <author_id>
+author: gautham
 mermaid: true
 pin: false
 math: true

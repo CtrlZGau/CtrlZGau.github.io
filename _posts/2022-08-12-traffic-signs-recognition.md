@@ -4,7 +4,7 @@ date: 2022-08-12 00:00:00 +0800
 categories: [Projects, ML]
 tags: [ml, dl, cnn, object detection, computer vision]     # TAG names should always be lowercase
 subsection: "Personal Projects"
-author: <author_id>
+author: gautham
 mermaid: true
 pin: false
 image: /assets/images/Thumbnail/traffic.png

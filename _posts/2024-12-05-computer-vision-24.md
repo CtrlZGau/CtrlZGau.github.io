@@ -1,14 +1,14 @@
 ---
 title: Introduction to Computer Vision
 date: 2024-12-06 00:00:00 +0800
-categories: [CMU MRSD, Robotics]
+categories: [Robotics, Computer Vision]
 tags: [computer vision]     # TAG names should always be lowercase
 cmu_subsection: "Fall 2024"
-author: <author_id>
+author: gautham
 mermaid: true
 pin: false
 math: true
-image: /assets/images/ldr.png
+image: /about.jpeg
 ---
 
 # Image Processing and Representation
