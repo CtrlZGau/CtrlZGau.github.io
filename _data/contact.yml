@@ -23,12 +23,12 @@
 -
   type: instagram
   icon: 'fab fa-instagram'   # icons powered by <https://fontawesome.com/>
-  url:  'https://www.instagram.com/bhaswanth_a/'
+  url:  'https://www.instagram.com/'  # placeholder, update if you use Instagram
   
 -
   type: linkedin
   icon: 'fab fa-linkedin-in'   # icons powered by <https://fontawesome.com/>
-  url:  'https://www.linkedin.com/in/bhaswanth-a/'                  # Fill with your Linkedin homepage
+  url:  'https://www.linkedin.com/in/gautham-balachandran-robotics/'                  # Fill with your Linkedin homepage
 # -
 #   type: stack-overflow
 #   icon: 'fab fa-stack-overflow'
@@ -37,4 +37,4 @@
 -
   type: cv
   icon: 'fas fa-file'   # icons powered by <https://fontawesome.com/>
-  url:  'https://bhaswanth-a.github.io/cv/'
+  url:  'https://ctrlzgau.github.io/cv/'

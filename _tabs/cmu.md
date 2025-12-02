@@ -1,6 +1,6 @@
 ---
 layout: cmu
-title: CMU MRSD
+title: Robotics Notes
 icon: fas fa-school
 order: 3
 ---
