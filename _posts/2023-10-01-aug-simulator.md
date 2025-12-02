@@ -11,7 +11,7 @@ math: true
 image: /assets/images/Thumbnail/slocum_rsz1.jpg
 ---
 
-[![Bhaswanth-A/AUG-Simulator - GitHub](https://gh-card.dev/repos/Bhaswanth-A/AUG-Simulator.svg)](https://github.com/Bhaswanth-A/AUG-Simulator)
+[![CtrlZGau/AUG-Simulator - GitHub](https://gh-card.dev/repos/CtrlZGau/AUG-Simulator.svg)](https://github.com/CtrlZGau/AUG-Simulator)
 
 The following project was completed as part of my undergraduate thesis at the [Institute for Systems and Robotics](https://welcome.isr.tecnico.ulisboa.pt/), Lisbon under the supervision of [Dr. David Cabecinhas](https://welcome.isr.tecnico.ulisboa.pt/author/davidalexandre/) and [Dr. Pedro Batista](https://welcome.isr.tecnico.ulisboa.pt/author/pedrotiagomartins/)
 
@@ -596,7 +596,7 @@ $$
 
 # Simulation Results
 
-The complete code for the AUG Simulator is made open-source and can be found at: [AUG-Simulator](https://github.com/Bhaswanth-A/UG-Simulator). 
+The complete code for the AUG Simulator is made open-source and can be found at: [AUG-Simulator](https://github.com/CtrlZGau/AUG-Simulator). 
 
 The code is written in the Python programming language.
 

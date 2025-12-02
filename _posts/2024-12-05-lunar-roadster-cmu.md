@@ -4,7 +4,7 @@ date: 2024-12-05 00:00:00 +0800
 categories: [Robotics]
 tags: [space, navigation, localization, perception, control, planning, electronics, design]     # TAG names should always be lowercase
 # subsection: "CMU Capstone Project"
-author: <author_id>
+author: gautham
 mermaid: true
 cmu_pin: true
 math: true
@@ -14,7 +14,7 @@ image: /assets/images/Roadster/moon.jpeg
 
 Supervisor: [Dr. William "Red" Whittaker](https://www.ri.cmu.edu/ri-faculty/william-red-l-whittaker/) 
 
-Team: Bhaswanth Ayapilla, Ankit Aggarwal, Deepam Ameria, Simson D'Souza, Boxiang (William) Fu
+Team: Gautham Balachandran and collaborators
 
 
 [Visit the Lunar ROADSTER Website](https://mrsdprojects.ri.cmu.edu/2025teami/)
@@ -268,16 +268,16 @@ Date: $12^{th}$ November, $2025$
 
 Date: $7^{th}$ February, $2025$
 
-<object data="/assets/pdfs/capstone/Bhaswanth_Ayapilla_ILR01.pdf" width="100%" height="800" type="application/pdf">
-    <p>Your browser does not support PDFs. Please download the slides <a href="/assets/pdfs/capstone/Bhaswanth_Ayapilla_ILR01.pdf">here</a>.</p>
+<object data="/assets/pdfs/capstone/ILR01.pdf" width="100%" height="800" type="application/pdf">
+    <p>Your browser does not support PDFs. Please download the slides <a href="/assets/pdfs/capstone/ILR01.pdf">here</a>.</p>
 </object>
 
 ## ILR 02
 
 Date: $14^{th}$ February, $2025$
 
-<object data="/assets/pdfs/capstone/Bhaswanth_Ayapilla_ILR02.pdf" width="100%" height="800" type="application/pdf">
-    <p>Your browser does not support PDFs. Please download the slides <a href="/assets/pdfs/capstone/Bhaswanth_Ayapilla_ILR02.pdf">here</a>.</p>
+<object data="/assets/pdfs/capstone/ILR02.pdf" width="100%" height="800" type="application/pdf">
+    <p>Your browser does not support PDFs. Please download the slides <a href="/assets/pdfs/capstone/ILR02.pdf">here</a>.</p>
 </object>
 
 
@@ -285,24 +285,24 @@ Date: $14^{th}$ February, $2025$
 
 Date: $28^{th}$ February, $2025$
 
-<object data="/assets/pdfs/capstone/Bhaswanth_Ayapilla_ILR03.pdf" width="100%" height="800" type="application/pdf">
-    <p>Your browser does not support PDFs. Please download the slides <a href="/assets/pdfs/capstone/Bhaswanth_Ayapilla_ILR03.pdf">here</a>.</p>
+<object data="/assets/pdfs/capstone/ILR03.pdf" width="100%" height="800" type="application/pdf">
+    <p>Your browser does not support PDFs. Please download the slides <a href="/assets/pdfs/capstone/ILR03.pdf">here</a>.</p>
 </object>
 
 ## ILR 04
 
 Date: $21^{th}$ March, $2025$
 
-<object data="/assets/pdfs/capstone/Bhaswanth_Ayapilla_ILR04.pdf" width="100%" height="800" type="application/pdf">
-    <p>Your browser does not support PDFs. Please download the slides <a href="/assets/pdfs/capstone/Bhaswanth_Ayapilla_ILR04.pdf">here</a>.</p>
+<object data="/assets/pdfs/capstone/ILR04.pdf" width="100%" height="800" type="application/pdf">
+    <p>Your browser does not support PDFs. Please download the slides <a href="/assets/pdfs/capstone/ILR04.pdf">here</a>.</p>
 </object>
 
 ## ILR 05
 
 Date: $9^{th}$ April, $2025$
 
-<object data="/assets/pdfs/capstone/Bhaswanth_Ayapilla_ILR05.pdf" width="100%" height="800" type="application/pdf">
-    <p>Your browser does not support PDFs. Please download the slides <a href="/assets/pdfs/capstone/Bhaswanth_Ayapilla_ILR05.pdf">here</a>.</p>
+<object data="/assets/pdfs/capstone/ILR05.pdf" width="100%" height="800" type="application/pdf">
+    <p>Your browser does not support PDFs. Please download the slides <a href="/assets/pdfs/capstone/ILR05.pdf">here</a>.</p>
 </object>
 
 ## ILR 06

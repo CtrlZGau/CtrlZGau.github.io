@@ -8,7 +8,7 @@ layout: page
     {% assign pinned_posts = site.posts | where: "cmu_pin", true %}
     {% if pinned_posts.size > 0 %}
     <div id="pinned-posts">
-        <h2>Capstone Project - CMU MRSD</h2>
+        <h2>Highlighted Robotics Project</h2>
         {% for post in pinned_posts %}
         <div class="post-preview pinned">
             <h1>
@@ -59,7 +59,7 @@ layout: page
         <h2>{{ subsection.name }}</h2> <!-- Subsection title -->
         
         {% for post in subsection.items %}
-        {% if post.categories contains 'CMU MRSD' and post.pin != true %}
+        {% if post.categories contains 'Robotics' and post.pin != true %}
         <div class="post-preview">
             <h1>
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>

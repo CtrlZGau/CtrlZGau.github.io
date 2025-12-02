@@ -1,10 +1,10 @@
 ---
 title: Introduction to Robotics Business
 date: 2025-03-10 00:00:00 +0800
-categories: [CMU MRSD, Robotics]
+categories: [Robotics, Business]
 tags: [business, construction, startup]     # TAG names should always be lowercase
 cmu_subsection: "Spring 2025"
-author: <author_id>
+author: gautham
 mermaid: true
 pin: false
 math: true

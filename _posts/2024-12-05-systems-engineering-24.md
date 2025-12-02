@@ -1,17 +1,17 @@
 ---
 title: Systems Engineering and Project Management for Robotics
 date: 2024-12-02 00:00:00 +0800
-categories: [CMU MRSD, Robotics]
+categories: [Robotics]
 tags: [systems engineering, project management, v-model]     # TAG names should always be lowercase
 cmu_subsection: "Fall 2024"
-author: <author_id>
+author: gautham
 mermaid: true
 pin: false
 math: true
-image: /assets/images/ldr.png
+image: /about.jpeg
 ---
 
-The content below are my notes for the class \"16-650 Systems Engineering and Management for Robotics" Fall 2024, by Dr. Dimi Apostolopoulos. The credit for the full content goes to Professor Dimi along with several internet sources. You can see a clear relation of the below concepts with my MRSD Capstone Project, the Lunar ROADSTER -- check [Conceptual Design Review Report (CoDRR)](https://bhaswanth-a.github.io/posts/lunar-roadster-cmu/#conceptual-design-review-report-codrr).
+The content below captures my notes and reflections on **systems engineering and management for robotics**, collected from lectures, books, and hands-on project experience. These ideas strongly influence how I structure robotics projects, from requirements and architectures to verification and field testing.
 
 # System
 

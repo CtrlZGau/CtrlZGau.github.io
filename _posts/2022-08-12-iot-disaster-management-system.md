@@ -10,7 +10,7 @@ pin: false
 image: /assets/images/Thumbnail/iot_rsz.jpg
 ---
 
-[![Bhaswanth-A/IoT-Disaster-Management-System-for-Floods - GitHub](https://gh-card.dev/repos/Bhaswanth-A/IoT-Disaster-Management-System-for-Floods.svg)](https://github.com/Bhaswanth-A/IoT-Disaster-Management-System-for-Floods)
+[![CtrlZGau/IoT-Disaster-Management-System-for-Floods - GitHub](https://gh-card.dev/repos/CtrlZGau/IoT-Disaster-Management-System-for-Floods.svg)](https://github.com/CtrlZGau/IoT-Disaster-Management-System-for-Floods)
 
 # Introduction
 

@@ -1,10 +1,10 @@
 ---
 title: Robot Autonomy
 date: 2025-03-10 00:00:00 +0800
-categories: [CMU MRSD, Robotics]
+categories: [Robotics, Autonomy]
 tags: [manipulators, franka]     # TAG names should always be lowercase
 cmu_subsection: "Spring 2025"
-author: <author_id>
+author: gautham
 mermaid: true
 pin: false
 math: true
@@ -13,7 +13,7 @@ image: /assets/images/ldr.png
 
 # Adaptive Pixel Art using a Franka Arm
 
-[![Bhaswanth-A/pixel-art-franka - GitHub](https://gh-card.dev/repos/Bhaswanth-A/pixel-art-franka.svg)](https://github.com/Bhaswanth-A/pixel-art-franka)
+[![CtrlZGau/pixel-art-franka - GitHub](https://gh-card.dev/repos/CtrlZGau/pixel-art-franka.svg)](https://github.com/CtrlZGau/pixel-art-franka)
 
 ## Demo 
 

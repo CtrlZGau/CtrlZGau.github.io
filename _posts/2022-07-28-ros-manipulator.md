@@ -4,13 +4,13 @@ date: 2022-07-29 00:00:00 +0800
 categories: [Projects, Robotics]
 tags: [ros, urdf]     # TAG names should always be lowercase
 subsection: "Personal Projects"
-author: <author_id>
+author: gautham
 mermaid: true
 pin: false
 image: /assets/images/Thumbnail/arm.png
 ---
 
-[![Bhaswanth-A/robot-manipulator - GitHub](https://gh-card.dev/repos/Bhaswanth-A/robot-manipulator.svg?fullname=)](https://github.com/Bhaswanth-A/robot-manipulator)
+[![CtrlZGau/robot-manipulator - GitHub](https://gh-card.dev/repos/CtrlZGau/robot-manipulator.svg?fullname=)](https://github.com/CtrlZGau/robot-manipulator)
 
 # Introduction
 

@@ -10,7 +10,7 @@ pin: false
 image: /assets/images/Thumbnail/traffic.png
 ---
 
-[![Bhaswanth-A/Traffic-Signs-Recognition - GitHub](https://gh-card.dev/repos/Bhaswanth-A/Traffic-Signs-Recognition.svg?fullname=)](https://github.com/Bhaswanth-A/Traffic-Signs-Recognition)
+[![CtrlZGau/Traffic-Signs-Recognition - GitHub](https://gh-card.dev/repos/CtrlZGau/Traffic-Signs-Recognition.svg?fullname=)](https://github.com/CtrlZGau/Traffic-Signs-Recognition)
 
 ## Introduction
 

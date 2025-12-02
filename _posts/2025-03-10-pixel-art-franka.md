@@ -4,7 +4,7 @@ date: 2025-03-10 00:00:00 +0800
 categories: [Projects, Robotics]
 tags: [manipulators, franka]     # TAG names should always be lowercase
 subsection: "Projects at CMU"
-author: <author_id>
+author: gautham
 mermaid: true
 pin: false
 math: true
@@ -13,7 +13,7 @@ image: /assets/images/Thumbnail/franka2.jpg
 
 # Adaptive Pixel Art using a Franka Arm
 
-[![Bhaswanth-A/pixel-art-franka - GitHub](https://gh-card.dev/repos/Bhaswanth-A/pixel-art-franka.svg)](https://github.com/Bhaswanth-A/pixel-art-franka)
+[![CtrlZGau/pixel-art-franka - GitHub](https://gh-card.dev/repos/CtrlZGau/pixel-art-franka.svg)](https://github.com/CtrlZGau/pixel-art-franka)
 
 ## Demo 
 

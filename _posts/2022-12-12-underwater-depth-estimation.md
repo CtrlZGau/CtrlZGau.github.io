@@ -4,14 +4,14 @@ date: 2022-12-12 00:00:00 +0800
 categories: [Projects, Robotics]
 tags: [perception, underwater, sauvc, depth, camera]     # TAG names should always be lowercase
 subsection: "Academic Projects at BITS Pilani"
-author: <author_id>
+author: gautham
 mermaid: true
 pin: false
 image: /assets/images/Thumbnail/cam.png
 math: true
 ---
 
-[![Bhaswanth-A/Underwater-Depth-Estimation-and-Localization - GitHub](https://gh-card.dev/repos/Bhaswanth-A/Underwater-Depth-Estimation-and-Localization.svg)](https://github.com/Bhaswanth-A/Underwater-Depth-Estimation-and-Localization)
+[![CtrlZGau/Underwater-Depth-Estimation-and-Localization - GitHub](https://gh-card.dev/repos/CtrlZGau/Underwater-Depth-Estimation-and-Localization.svg)](https://github.com/CtrlZGau/Underwater-Depth-Estimation-and-Localization)
 
 # **Abstract**
 

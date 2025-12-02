@@ -3,7 +3,7 @@ title: ROS Theory
 date: 2022-07-29 00:00:00 +0800
 categories: [Blog, Robotics]
 tags: [ros]     # TAG names should always be lowercase
-author: <author_id>
+author: gautham
 mermaid: true
 pin: false
 math: true
@@ -19,13 +19,13 @@ ROS is an open-source project that provides a framework to your robot. It has be
 
 ## Table of contents
 
-1. [Introduction](https://bhaswanth-a.github.io/posts/ros-theory/#introduction)
-2. [Tools](https://bhaswanth-a.github.io/posts/ros-theory/#ros-tools)
-3. [Topics](https://bhaswanth-a.github.io/posts/ros-theory/#ros-topics)
-4. [Messages](https://bhaswanth-a.github.io/posts/ros-theory/#ros-messages)
-5. [Services](https://bhaswanth-a.github.io/posts/ros-theory/#ros-services)
-6. [Actions](https://bhaswanth-a.github.io/posts/ros-theory/#ros-actions)
-7. [TF2](https://bhaswanth-a.github.io/posts/ros-theory/#ros-tf2)
+1. [Introduction](/posts/ros-theory/#introduction)
+2. [Tools](/posts/ros-theory/#ros-tools)
+3. [Topics](/posts/ros-theory/#ros-topics)
+4. [Messages](/posts/ros-theory/#ros-messages)
+5. [Services](/posts/ros-theory/#ros-services)
+6. [Actions](/posts/ros-theory/#ros-actions)
+7. [TF2](/posts/ros-theory/#ros-tf2)
 
 
 # Introduction
@@ -1421,7 +1421,7 @@ rospy.init_node("tf2_listener")
 tfBuffer = tf2_ros.Buffer()
 listener = tf2_ros.TransformListener(tfBuffer)
 
-# Spawn another turtle in the same turtlesim node (Refer to https://github.com/Bhaswanth-A/ROS-Theory/blob/main/Services.md#571-spawning-2-turtles-in-the-same-node )
+# Spawn another turtle in the same turtlesim node (Refer to https://github.com/CtrlZGau/ROS-Theory/blob/main/Services.md#571-spawning-2-turtles-in-the-same-node )
 rospy.wait_for_service('spawn')
 spawner = rospy.ServiceProxy('spawn', Spawn)
 turtle_name = rospy.get_param('turtle', 'turtle2')
