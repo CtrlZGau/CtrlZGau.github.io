@@ -5,7 +5,7 @@ permalink: /
 order: 1
 ---
 
-![](/about.jpeg)
+![](assets/aboutme.jpg)
 
 <span style="font-size:1.5em;">Hey there! I am Gautham Balachandran.</span>
 
@@ -26,5 +26,5 @@ You can find a detailed summary of my background on the **CV** tab in the sideba
 **Personal email:** [gauthamgb85@gmail.com](mailto:gauthamgb85@gmail.com) \\
 **Institute email:** [f20230224@pilani.bits-pilani.ac.in](mailto:f20230224@pilani.bits-pilani.ac.in) \\
 **GitHub:** [CtrlZGau](https://github.com/CtrlZGau) \\
-**LinkedIn:** [Gautham Balachandran](https://www.linkedin.com/in/gautham-balachandran-robotics/) \\
+**LinkedIn:** [Gautham Balachandran](https://www.linkedin.com/in/gautham-balachandran/) \\
 ** All other socials can be found at the bottom left of the page.
