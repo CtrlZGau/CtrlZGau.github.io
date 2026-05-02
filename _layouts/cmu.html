@@ -1,14 +1,24 @@
 ---
 layout: page
-# The Home page layout
 ---
+
+<section class="portfolio-intro">
+    <p class="lead">
+        Notes from robotics work that connect perception, planning, controls, and learning into working autonomy.
+    </p>
+    <p>
+        These writeups are intentionally practical: they record design decisions, experimental hooks,
+        failure modes, and the engineering tradeoffs behind each robotics system.
+    </p>
+</section>
 
 <div id="post-list">
     <!-- Handle pinned posts first -->
-    {% assign pinned_posts = site.posts | where: "cmu_pin", true %}
+    {% assign robotics_posts = site.posts | where_exp: "post", "post.categories contains 'Robotics'" %}
+    {% assign pinned_posts = robotics_posts | where: "cmu_pin", true %}
     {% if pinned_posts.size > 0 %}
     <div id="pinned-posts">
-        <h2>Highlighted Robotics Project</h2>
+        <h2>Highlighted Robotics Notes</h2>
         {% for post in pinned_posts %}
         <div class="post-preview pinned">
             <h1>
@@ -53,13 +63,13 @@ layout: page
     {% endif %}
 
     <!-- Handle subsections -->
-    {% assign subsections = site.posts | group_by: "cmu_subsection" %}
+    {% assign subsections = robotics_posts | where_exp: "post", "post.cmu_pin != true" | group_by: "cmu_subsection" %}
     {% for subsection in subsections %}
+    {% if subsection.name != "" %}
     <div class="subsection">
         <h2>{{ subsection.name }}</h2> <!-- Subsection title -->
         
         {% for post in subsection.items %}
-        {% if post.categories contains 'Robotics' and post.pin != true %}
         <div class="post-preview">
             <h1>
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
@@ -98,9 +108,9 @@ layout: page
             </div> <!-- .post-meta -->
 
         </div> <!-- .post-preview -->
-        {% endif %}
         {% endfor %}
 
     </div> <!-- .subsection -->
+    {% endif %}
     {% endfor %}
 </div> <!-- #post-list -->

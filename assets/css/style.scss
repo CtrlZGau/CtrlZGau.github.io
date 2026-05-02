@@ -1,17 +1,34 @@
-$tab-count: {
-        {
-        site.tabs | size | plus: 1
-    }
-}
+---
+---
 
-; // plus 1 for home tab
-
-@import {
-        {
-        site.theme
-    }
-}
+@import "{{ site.theme }}";
 
 .text-content {
     text-align: justify;
+}
+
+.portfolio-intro {
+    margin-bottom: 1.75rem;
+}
+
+.portfolio-intro .lead {
+    font-size: 1.08rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+#post-list .subsection,
+#pinned-posts {
+    margin-top: 1.75rem;
+}
+
+#post-list .subsection > h2,
+#pinned-posts > h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.post-img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
 }

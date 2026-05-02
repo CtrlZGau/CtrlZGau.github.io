@@ -19,7 +19,14 @@ Previously, I served as **Software Subsystem Lead** at **Criss Robotics**, where
 
 My research interests span **imitation learning, deep reinforcement learning, 3D perception, and human-in-the-loop planning**. I enjoy working across the stack—from low-level robotics infrastructure and perception to high-level decision-making and user-aligned autonomy.
 
-You can find a detailed summary of my background on the **CV** tab in the sidebar.
+## What I Build
+
+- **Robot learning systems** that connect demonstrations, policy optimization, and simulation feedback loops.
+- **Autonomous navigation stacks** for rovers and mobile robots, with mapping, sensor fusion, and recovery behavior.
+- **Multi-agent planning pipelines** that reason about shared spaces, task allocation, and human preferences.
+- **Research prototypes** that turn messy robotics questions into experiments that can be measured, debugged, and improved.
+
+The **Projects** tab collects fuller case studies, while **Robotics Notes** holds more focused technical writeups. You can find a detailed summary of my background on the **CV** tab in the sidebar.
 
 # Contact
 

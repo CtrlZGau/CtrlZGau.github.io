@@ -1,11 +1,22 @@
 ---
 layout: page
-# The Home page layout
 ---
+
+<section class="portfolio-intro">
+    <p class="lead">
+        Selected robotics and autonomy projects spanning rover navigation, multi-robot coordination,
+        imitation learning, and preference-aware planning.
+    </p>
+    <p>
+        I use this space to document the systems I have built: the problem framing, technical choices,
+        what worked in simulation or lab settings, and the next questions each project opened up.
+    </p>
+</section>
 
 <div id="post-list">
     <!-- Handle pinned posts first -->
-    {% assign pinned_posts = site.posts | where: "cmu_pin", true %}
+    {% assign project_posts = site.posts | where_exp: "post", "post.categories contains 'Projects'" %}
+    {% assign pinned_posts = project_posts | where: "pin", true %}
     {% if pinned_posts.size > 0 %}
     <div id="pinned-posts">
         <h2>Highlighted Projects</h2>
@@ -53,13 +64,13 @@ layout: page
     {% endif %}
 
     <!-- Handle subsections -->
-    {% assign subsections = site.posts | group_by: "subsection" %}
+    {% assign subsections = project_posts | where_exp: "post", "post.pin != true" | group_by: "subsection" %}
     {% for subsection in subsections %}
+    {% if subsection.name != "" %}
     <div class="subsection">
         <h2>{{ subsection.name }}</h2> <!-- Subsection title -->
         
         {% for post in subsection.items %}
-        {% if post.categories contains 'Projects' and post.pin != true %}
         <div class="post-preview">
             <h1>
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
@@ -98,9 +109,9 @@ layout: page
             </div> <!-- .post-meta -->
 
         </div> <!-- .post-preview -->
-        {% endif %}
         {% endfor %}
 
     </div> <!-- .subsection -->
+    {% endif %}
     {% endfor %}
 </div> <!-- #post-list -->

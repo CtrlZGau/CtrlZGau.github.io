@@ -1,20 +1,17 @@
 ---
 layout: page
-# The Home page layout
 ---
 
-<!-- {% for post in site.posts %}
- {% if post.categories contains 'Tutorials' %}
-  {{ post.title }}
- {% endif %}
-{% endfor %} -->
-
-
+<section class="portfolio-intro">
+    <p class="lead">
+        Short-form notes on robotics, machine learning, and the engineering habits that make autonomy easier to debug.
+    </p>
+</section>
 
 <div id="post-list">
 
-    {% for post in site.posts %}
-    {%if post.categories contains 'Blog' %}
+    {% assign blog_posts = site.posts | where_exp: "post", "post.categories contains 'Blog'" %}
+    {% for post in blog_posts %}
     <div class="post-preview">
         <h1>
             <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
@@ -28,7 +25,7 @@ layout: page
             </div>
             <p>
                 {% include no-linenos.html content=post.content %}
-                {{ content | markdownify | strip_html | truncate: 200 }}
+                {{ post.content | markdownify | strip_html | truncate: 200 }}
             </p>
         </div>
 
@@ -62,7 +59,6 @@ layout: page
         </div> <!-- .post-meta -->
 
     </div> <!-- .post-review -->
-    {% endif %}
     {% endfor %}
 
 
