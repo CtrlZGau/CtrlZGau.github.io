@@ -7,18 +7,29 @@ subsection: Robot Learning
 cmu_subsection: Robot Learning
 pin: true
 cmu_pin: true
-image: /assets/aboutme_2.jpg
+image: /assets/projects/bimanual-imitation-learning.png
 ---
 
-This project explores how a two-arm manipulation system can learn useful behavior from demonstrations rather than from a fully hand-designed controller. The core idea is to represent a bimanual task in MuJoCo, collect or replay demonstrations, and train a policy that can reproduce coordinated arm motion while remaining stable under small changes in object pose and timing.
+This project studies how a two-arm manipulation system can learn coordinated behavior from demonstrations instead of relying on a fully hand-written controller. The goal is not just to replay arm motion, but to learn a policy that preserves the important structure of a bimanual task: synchronized reach, stable grasp timing, object handoff or transport, and recovery from small pose changes.
 
-The work started with environment design. A bimanual robot has more ways to fail than a single-arm setup: the arms can collide, fight each other through the object, or learn motions that only work for a narrow initial state. I modeled the task with explicit state observations for the robot joints, object pose, end-effector positions, and task progress so that the policy could learn coordination rather than memorize a visual trace.
+## Problem Setup
 
-## Technical Focus
+A bimanual robot has more failure modes than a single-arm setup. The arms can collide, pull the object in opposite directions, learn a brittle sequence that only works from one initial pose, or produce motions that look smooth in joint space but fail at the object level. I treated the simulation as a data pipeline first, then as a learning problem.
 
-- Built a MuJoCo simulation loop for bimanual manipulation experiments.
-- Structured demonstrations into state-action trajectories suitable for imitation learning.
-- Compared direct behavior cloning with objective-driven imitation variants.
-- Added evaluation hooks for rollout success, object displacement, and stability across randomized starts.
+The environment tracks joint positions and velocities, end-effector poses, object pose, contact state, and task progress. Demonstrations are converted into fixed-rate state-action trajectories so that training and evaluation use the same clock, reset logic, and observation normalization.
 
-The most useful lesson was that the reward or imitation objective is only one part of the system. Small choices in observation design, normalization, rollout resets, and success metrics often decide whether the learned behavior is actually robotics-ready. For future work, I want to connect this with visual inputs, force-aware constraints, and real-world calibration routines.
+## System Design
+
+- **Simulator:** MuJoCo task scene with two manipulators, task object, workspace limits, and randomized initial object poses.
+- **Observation vector:** joint state, gripper pose, object position/orientation, relative end-effector-object offsets, and phase or progress indicators.
+- **Action space:** joint velocity or target delta commands, depending on the controller wrapper used for the experiment.
+- **Data format:** demonstration rollouts stored as aligned state, action, reward, done, and metadata records for reproducible training.
+- **Training loop:** behavior cloning baseline with hooks for objective-driven imitation and rollout-based validation.
+
+## Evaluation Signals
+
+The important metrics are object-centric rather than only policy-centric. I track whether the object reaches the target region, whether both arms remain coordinated during contact, whether collisions occur, and how far performance drops when the start pose is randomized. I also log rollout videos and state traces because bimanual failures are often easier to understand visually than from a scalar score.
+
+## What I Learned
+
+The imitation objective matters, but small engineering choices matter just as much. Observation scaling, reset consistency, gripper timing, and success definitions can decide whether a policy learns robust coordination or simply memorizes a demonstration trace. The next step is to connect this pipeline with visual observations and force-aware constraints so the learned behavior is less dependent on privileged simulator state.
