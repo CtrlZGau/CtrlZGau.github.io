@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{%- assign page_title = site.title -%}
+{%- if page.layout == 'post' -%}
+  {%- assign page_title = page.title | append: ' — The Log' -%}
+{%- elsif page.url != '/' -%}
+  {%- assign page_title = page.title | append: ' — ' | append: site.author -%}
+{%- endif -%}
+{%- assign page_desc = page.description | default: site.description -%}
+{%- assign page_url = page.url | absolute_url -%}
+
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ page_desc | strip_newlines | strip }}">
+<link rel="canonical" href="{{ page_url }}">
+
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ page_title }}">
+<meta property="og:description" content="{{ page_desc | strip_newlines | strip }}">
+<meta property="og:url" content="{{ page_url }}">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ page_title }}">
+<meta name="twitter:description" content="{{ page_desc | strip_newlines | strip }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{%- if page.fonts == 'log' %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+{%- else %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@800&display=swap">
+{%- endif %}
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.author }} — The Log" href="{{ '/log/rss.xml' | absolute_url }}">
+{%- if page.intro %}
+<script>document.documentElement.className = 'js-intro';</script>
+{%- endif %}
+</head>
+<body class="{{ page.body_class | default: 'page-home' }}">
+{{ content }}
+{%- if page.scripts %}{% for s in page.scripts %}
+<script src="{{ s | relative_url }}" defer></script>
+{%- endfor %}{% endif %}
+</body>
+</html>

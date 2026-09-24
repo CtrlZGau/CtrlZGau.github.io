@@ -1,0 +1,665 @@
+---
+---
+
+/* ==========================================================================
+   Neon terminal — design tokens
+   ========================================================================== */
+
+:root {
+  --bg: #0E0F0C;
+  --text: #EDEDE6;
+  --body: #CFCFC7;
+  --muted: #9A9B92;
+  --line: #2A2B26;
+  --line-2: #3A3B35;
+  --accent: #C8F53B;
+  --accent-bg: #171A0C;
+  --code-bg: #171814;
+  --glow: 0 0 24px rgba(200, 245, 59, 0.55);
+
+  --mono-home: 'Space Mono', ui-monospace, Menlo, monospace;
+  --mono-log: 'JetBrains Mono', ui-monospace, monospace;
+  --display: 'Syne', sans-serif;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.page-home { font-family: var(--mono-home); }
+.page-log,
+.page-entry { font-family: var(--mono-log); }
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+a:hover { color: var(--accent); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Page frame — shared shell, per-page padding and section rhythm.
+   1200px of content plus the 120px gutters: 1440px, the reference artboard. */
+.shell {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 48px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 112px;
+}
+
+.shell-log,
+.shell-entry {
+  max-width: 1440px;
+  padding: 48px 96px;
+}
+
+.shell-log { gap: 96px; }
+.shell-entry { gap: 80px; }
+
+/* `main` is a layout pass-through: sections keep the shell's own rhythm. */
+.shell > main {
+  display: flex;
+  flex-direction: column;
+  gap: inherit;
+}
+
+/* ==========================================================================
+   Nav (shared)
+   ========================================================================== */
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.logo {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--text);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.page-log .nav-links { gap: 40px; }
+
+.nav-cv {
+  padding: 12px 18px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+  border-radius: 0;
+}
+
+.nav-cv:hover {
+  background: var(--bg);
+  color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.nav-cv-pill {
+  padding: 12px 20px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+}
+
+.nav-cv-pill:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.is-current { color: var(--accent); }
+.nav-back { color: var(--muted); }
+
+/* ==========================================================================
+   Home — hero
+   ========================================================================== */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.prompt {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.label {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.name {
+  margin: 0;
+  font-weight: 700;
+  font-size: clamp(56px, 13vw, 168px);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.name-inner { display: block; }
+
+.cursor {
+  display: inline-block;
+  width: 0.5em;
+  height: 0.8em;
+  background: var(--accent);
+  vertical-align: -0.06em;
+  margin-left: 0.08em;
+  box-shadow: var(--glow);
+  animation: blink 1.06s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 15px;
+}
+
+.chips-label { color: var(--muted); }
+
+.chip {
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+}
+
+.lede {
+  margin: 0;
+  max-width: 720px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--body);
+}
+
+/* ==========================================================================
+   Home — diagram
+   ========================================================================== */
+
+.diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.diagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   Home — work
+   ========================================================================== */
+
+.work {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.work-rows {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+.work-row {
+  display: grid;
+  grid-template-columns: 160px 320px minmax(0, 1fr);
+  gap: 24px;
+  padding: 18px 0;
+  border-bottom: 1px dashed var(--line);
+}
+
+.work-years { color: var(--muted); }
+.work-name { font-weight: 700; }
+.work-desc { color: var(--body); }
+
+/* ==========================================================================
+   Home — papers + log
+   ========================================================================== */
+
+.cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 64px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.paper {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.venue { color: var(--accent); }
+
+.log-link { font-size: 17px; }
+.log-link.dim { color: var(--body); }
+.log-link.dim:hover { color: var(--accent); }
+
+/* ==========================================================================
+   Home — footer
+   ========================================================================== */
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  color: var(--muted);
+  padding-top: 32px;
+  border-top: 1px dashed var(--line);
+}
+
+.foot a { color: inherit; }
+.foot a:hover { color: var(--accent); }
+
+.foot-links {
+  display: flex;
+  gap: 28px;
+}
+
+/* ==========================================================================
+   Log index
+   ========================================================================== */
+
+.log-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 64px;
+}
+
+.log-head h1 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(72px, 18vw, 180px);
+  line-height: 0.86;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.log-head .outline {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--text);
+}
+
+.log-head .dot { color: var(--accent); }
+
+.log-head p {
+  margin: 0;
+  max-width: 380px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pill {
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.pill:hover { color: var(--accent); }
+
+.pill.is-active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.log-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+
+.log-row {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) 140px 140px;
+  gap: 32px;
+  align-items: baseline;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.log-row[hidden] { display: none; }
+
+.log-num {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.log-num.is-new { color: var(--accent); }
+
+.log-title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.log-tag,
+.log-date {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.log-date { text-align: right; }
+
+.log-empty {
+  margin: 28px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ==========================================================================
+   Log entry
+   ========================================================================== */
+
+.entry {
+  width: 720px;
+  max-width: 100%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.shell-entry > main { align-items: center; }
+
+.entry-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.entry-num { color: var(--accent); }
+
+.entry h1 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.entry-body {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--body);
+}
+
+.entry-body > * { margin: 0; }
+
+.entry-body a {
+  color: var(--text);
+  border-bottom: 1px solid var(--line-2);
+}
+
+.entry-body a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.entry-body h2,
+.entry-body h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.entry-body h2 { font-size: 28px; }
+.entry-body h3 { font-size: 20px; }
+
+.entry-body ul,
+.entry-body ol { padding-left: 22px; }
+
+.entry-body blockquote {
+  padding-left: 20px;
+  border-left: 1px solid var(--line-2);
+  color: var(--muted);
+}
+
+.entry-body code {
+  font-family: var(--mono-log);
+  font-size: 14px;
+  background: var(--code-bg);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
+/* One box per code block: either a bare <pre> or Rouge's wrapper div. */
+.entry-body > pre,
+.entry-body .highlighter-rouge {
+  margin: 0;
+  padding: 24px;
+  background: var(--code-bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+  overflow-x: auto;
+}
+
+.entry-body .highlighter-rouge .highlight,
+.entry-body .highlighter-rouge pre {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  overflow: visible;
+}
+
+.entry-body pre code {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* Syntax highlighting — muted, palette-native. */
+.highlight {
+  .c, .cd, .cm, .c1, .cs { color: var(--muted); font-style: italic; }
+  .k, .kc, .kd, .kn, .kp, .kr, .kt, .kv { color: var(--accent); }
+  .o, .ow { color: var(--muted); }
+  .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr { color: #B7C98A; }
+  .m, .mb, .mf, .mh, .mi, .mo, .il { color: #B7C98A; }
+  .n, .na, .nb, .nc, .nd, .ni, .nl, .nn, .nx, .py, .nv { color: var(--text); }
+  .nf, .nt { color: #DCE9B4; }
+  .err { color: var(--text); background: none; }
+  .gd { color: #C98A8A; }
+  .gi { color: var(--accent); }
+}
+
+/* ==========================================================================
+   Intro animation (home only)
+   ========================================================================== */
+
+/* Nothing is hidden until JS opts in, so the page works without JavaScript. */
+.js-intro {
+  .reveal,
+  [data-intro] { opacity: 0; }
+
+  /* The full name is laid out from the start — untyped letters are hidden
+     rather than absent, so the h1 never changes size while typing. */
+  .name-text { visibility: hidden; }
+  .name-text .letter.is-on { visibility: visible; }
+  .cursor { visibility: visible; }
+}
+
+.js-intro .is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.js-intro .reveal,
+.js-intro [data-intro] {
+  transform: translateY(8px);
+  transition: opacity 500ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Edges draw themselves in; the feedback loop returns to its dashes after. */
+.js-intro .diagram .edge { opacity: 0; }
+
+.js-intro .diagram .edge.is-drawing {
+  opacity: 1;
+  transition: stroke-dashoffset 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.js-intro .diagram .edge.is-drawn { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js-intro {
+    .reveal,
+    [data-intro] {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .name-text,
+    .name-text .letter { visibility: visible; }
+    .diagram .edge { opacity: 1; }
+  }
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 767px) {
+  .shell,
+  .shell-log,
+  .shell-entry { padding: 32px 20px; }
+
+  .shell { gap: 72px; }
+  .shell-log { gap: 64px; }
+  .shell-entry { gap: 48px; }
+
+  .nav-links { gap: 20px; }
+  .page-log .nav-links { gap: 20px; }
+
+  .nav-cv { padding: 10px 14px; }
+  .nav-cv-pill { padding: 10px 16px; }
+
+  /* Diagram labels get small below this width — let it scroll instead. */
+  .diagram-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .diagram-scroll svg { min-width: 640px; }
+
+  .work-row {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 8px 16px;
+  }
+
+  .work-desc { grid-column: 1 / -1; }
+
+  .cols { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+
+  .log-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .log-head .outline { -webkit-text-stroke-width: 1.5px; }
+
+  /* Number, tag and date collapse into one meta line above the title. */
+  .log-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 16px;
+    padding: 24px 0;
+  }
+
+  .log-title {
+    order: 1;
+    width: 100%;
+    font-size: 24px;
+  }
+
+  .log-date { text-align: left; }
+
+  .entry h1 { font-size: 40px; }
+  .entry-body > pre,
+  .entry-body .highlighter-rouge { padding: 18px; }
+
+  .foot {
+    flex-direction: column;
+    gap: 16px;
+  }
+}

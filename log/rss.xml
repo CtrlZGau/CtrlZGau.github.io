@@ -1,0 +1,27 @@
+---
+layout: null
+permalink: /log/rss.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.author | xml_escape }} — The Log</title>
+    <link>{{ '/log/' | absolute_url }}</link>
+    <description>{{ page.description | default: 'Daily notes on whatever I learned today — papers, bugs, builds, half-formed ideas.' | xml_escape }}</description>
+    <language>{{ site.lang }}</language>
+    <atom:link href="{{ '/log/rss.xml' | absolute_url }}" rel="self" type="application/rss+xml"/>
+    {%- if site.posts.first %}
+    <lastBuildDate>{{ site.posts.first.date | date_to_rfc822 }}</lastBuildDate>
+    {%- endif %}
+    {%- for post in site.posts %}
+    <item>
+      <title>{{ post.title | xml_escape }}</title>
+      <link>{{ post.url | absolute_url }}</link>
+      <guid isPermaLink="true">{{ post.url | absolute_url }}</guid>
+      <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+      {%- if post.tag %}<category>{{ post.tag | xml_escape }}</category>{% endif %}
+      <description>{{ post.content | strip_html | normalize_whitespace | truncatewords: 60 | xml_escape }}</description>
+    </item>
+    {%- endfor %}
+  </channel>
+</rss>

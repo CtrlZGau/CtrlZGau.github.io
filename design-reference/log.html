@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Home — Neon Terminal</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;family=Syne:wght@800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0E0F0C}
+a{color:#EDEDE6;text-decoration:none}a:hover{color:#C8F53B}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1760px; box-sizing: border-box; padding: 48px 120px; background: #0E0F0C; color: #EDEDE6; font-family: 'Space Mono', ui-monospace, Menlo, monospace; display: flex; flex-direction: column; gap: 112px">
+
+<nav style="display: flex; justify-content: space-between; align-items: center; font-size: 14px">
+<a href="#" style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 20px">gb.</a>
+<div style="display: flex; gap: 36px; align-items: center">
+<a href="#">./work</a><a href="Log.dc.html">./log</a><a href="#" style="padding: 12px 18px; background: #C8F53B; color: #0E0F0C; font-weight: 700">cv.pdf</a>
+</div>
+</nav>
+
+<header style="display: flex; flex-direction: column; gap: 28px">
+<div style="font-size: 16px; color: #9A9B92">$ rosrun gautham hello</div>
+<h1 style="margin: 0; font-weight: 700; font-size: 168px; line-height: 0.95; letter-spacing: -0.05em">
+<span style="display: block">GAUTHAM<span style="display: inline-block; width: 0.5em; height: 0.8em; background: #C8F53B; vertical-align: -0.06em; margin-left: 0.08em; box-shadow: 0 0 24px rgba(200,245,59,0.55)"></span></span>
+</h1>
+<div style="display: flex; gap: 12px; flex-wrap: wrap; font-size: 15px">
+<span style="color: #9A9B92">subscribed to:</span>
+<span style="padding: 4px 10px; border: 1px solid #2A2B26">/manipulation</span>
+<span style="padding: 4px 10px; border: 1px solid #2A2B26">/imitation_learning</span>
+<span style="padding: 4px 10px; border: 1px solid #2A2B26">/vla</span>
+<span style="padding: 4px 10px; border: 1px solid #2A2B26">/scene_graphs</span>
+</div>
+<p style="margin: 0; max-width: 720px; font-size: 17px; line-height: 1.7; color: #CFCFC7">Robotics researcher at BITS Pilani. I take learned manipulation policies from training runs to real hardware — currently on a humanoid at Manav Robotics.</p>
+</header>
+
+<section style="display: flex; flex-direction: column; gap: 24px">
+<div style="font-size: 14px; color: #9A9B92">$ rqt_graph  # how I think about robots</div>
+<svg viewBox="0 0 1200 260" width="1200" height="260" role="img" aria-label="Loop from camera to policy to arm to world and back">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#9A9B92"></path></marker></defs>
+<rect x="20" y="60" width="200" height="72" fill="none" stroke="#EDEDE6" stroke-width="1.5"></rect>
+<text x="120" y="102" text-anchor="middle" fill="#EDEDE6" font-family="Space Mono, monospace" font-size="18">/camera</text>
+<rect x="330" y="60" width="260" height="72" fill="#171A0C" stroke="#C8F53B" stroke-width="1.5"></rect>
+<text x="460" y="96" text-anchor="middle" fill="#C8F53B" font-family="Space Mono, monospace" font-size="18">/policy</text>
+<text x="460" y="118" text-anchor="middle" fill="#9A9B92" font-family="Space Mono, monospace" font-size="12">vla · diffusion · IL</text>
+<rect x="700" y="60" width="200" height="72" fill="none" stroke="#EDEDE6" stroke-width="1.5"></rect>
+<text x="800" y="102" text-anchor="middle" fill="#EDEDE6" font-family="Space Mono, monospace" font-size="18">/arm</text>
+<rect x="1000" y="60" width="180" height="72" fill="none" stroke="#EDEDE6" stroke-width="1.5" stroke-dasharray="5 5"></rect>
+<text x="1090" y="102" text-anchor="middle" fill="#EDEDE6" font-family="Space Mono, monospace" font-size="18">/world</text>
+<line x1="220" y1="96" x2="326" y2="96" stroke="#9A9B92" stroke-width="1.5" marker-end="url(#ah)"></line>
+<line x1="590" y1="96" x2="696" y2="96" stroke="#9A9B92" stroke-width="1.5" marker-end="url(#ah)"></line>
+<line x1="900" y1="96" x2="996" y2="96" stroke="#9A9B92" stroke-width="1.5" marker-end="url(#ah)"></line>
+<path d="M1090 132 L1090 210 L120 210 L120 136" fill="none" stroke="#9A9B92" stroke-width="1.5" stroke-dasharray="4 6" marker-end="url(#ah)"></path>
+<text x="605" y="240" text-anchor="middle" fill="#9A9B92" font-family="Space Mono, monospace" font-size="13">feedback — repeat until it stops dropping things</text>
+</svg>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 20px">
+<div style="font-size: 14px; color: #9A9B92">$ ls ~/work</div>
+<div style="display: flex; flex-direction: column; font-size: 16px">
+<div style="display: grid; grid-template-columns: 160px 320px minmax(0, 1fr); gap: 24px; padding: 18px 0; border-bottom: 1px dashed #2A2B26"><span style="color: #9A9B92">2026</span><span style="font-weight: 700">manav_robotics/</span><span style="color: #CFCFC7">VLA + diffusion on a humanoid, reward-model data filtering</span></div>
+<div style="display: grid; grid-template-columns: 160px 320px minmax(0, 1fr); gap: 24px; padding: 18px 0; border-bottom: 1px dashed #2A2B26"><span style="color: #9A9B92">2025–26</span><span style="font-weight: 700">inspire_lab/</span><span style="color: #CFCFC7">scene graphs, object-level maps, multi-robot nav</span></div>
+<div style="display: grid; grid-template-columns: 160px 320px minmax(0, 1fr); gap: 24px; padding: 18px 0; border-bottom: 1px dashed #2A2B26"><span style="color: #9A9B92">2025</span><span style="font-weight: 700">hiro_lab_iisc/</span><span style="color: #CFCFC7">bimanual IL, dynamic throwing, bin packing</span></div>
+<div style="display: grid; grid-template-columns: 160px 320px minmax(0, 1fr); gap: 24px; padding: 18px 0; border-bottom: 1px dashed #2A2B26"><span style="color: #9A9B92">2024–25</span><span style="font-weight: 700">criss_robotics/</span><span style="color: #CFCFC7">software lead, 3rd at ERC 2025 (Remote)</span></div>
+</div>
+</section>
+
+<section style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<div style="font-size: 14px; color: #9A9B92">$ cat papers.txt</div>
+<a href="#" style="font-size: 17px; line-height: 1.5"><span style="color: #C8F53B">[CoRL '26 · SemRob]</span> IMBench: A Benchmark for Intuitive Manipulation</a>
+<a href="#" style="font-size: 17px; line-height: 1.5"><span style="color: #C8F53B">[NeurIPS '25 · LAW]</span> DiffusionPack: Bin Packing with Custom Human Preferences</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 20px">
+<div style="font-size: 14px; color: #9A9B92">$ tail -n 3 log/</div>
+<a href="Post.dc.html" style="font-size: 17px">014 · Notes on action chunking</a>
+<a href="#" style="font-size: 17px; color: #CFCFC7">013 · [Entry title]</a>
+<a href="#" style="font-size: 17px; color: #CFCFC7">012 · [Entry title]</a>
+</div>
+</section>
+
+<footer style="display: flex; justify-content: space-between; font-size: 15px; color: #9A9B92; padding-top: 32px; border-top: 1px dashed #2A2B26">
+<a href="mailto:gauthamgb85@gmail.com">gauthamgb85@gmail.com</a>
+<div style="display: flex; gap: 28px"><a href="#">github</a><a href="#">linkedin</a></div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1760}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

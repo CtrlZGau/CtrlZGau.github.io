@@ -1,3 +1,91 @@
 ---
-layout: home
+layout: default
+title: Gautham Balachandran — Robotics
+body_class: page-home
+intro: true
+scripts:
+  - /assets/js/intro.js
 ---
+{%- assign recent = site.posts | slice: 0, 3 -%}
+<div class="shell">
+
+  <nav class="nav" data-intro="nav">
+    <a class="logo" href="{{ '/' | relative_url }}">gb.</a>
+    <div class="nav-links">
+      <a href="#work">./work</a>
+      <a href="{{ '/log/' | relative_url }}">./log</a>
+      <a class="nav-cv" href="{{ site.cv_url | relative_url }}" target="_blank" rel="noopener">cv.pdf</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="prompt" data-intro="prompt">$ rosrun gautham hello</div>
+    <h1 class="name" aria-label="Gautham"><span class="name-inner" aria-hidden="true"><span class="name-text">GAUTHAM</span><span class="cursor"></span></span></h1>
+    <div class="chips">
+      <span class="chips-label" data-intro="chip">subscribed to:</span>
+      <span class="chip" data-intro="chip">/manipulation</span>
+      <span class="chip" data-intro="chip">/imitation_learning</span>
+      <span class="chip" data-intro="chip">/vla</span>
+      <span class="chip" data-intro="chip">/scene_graphs</span>
+    </div>
+    <p class="lede" data-intro="lede">Robotics researcher at BITS Pilani. I take learned manipulation policies from training runs to real hardware — currently on a humanoid at Manav Robotics.</p>
+  </header>
+
+  <main>
+  <section class="diagram reveal">
+    <div class="label">$ rqt_graph  # how I think about robots</div>
+    <div class="diagram-scroll">
+      <svg viewBox="0 0 1200 260" role="img" aria-label="Loop from camera to policy to arm to world and back">
+        <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#9A9B92"/></marker></defs>
+        <rect x="20" y="60" width="200" height="72" fill="none" stroke="#EDEDE6" stroke-width="1.5"/>
+        <text x="120" y="102" text-anchor="middle" fill="#EDEDE6" font-family="Space Mono, monospace" font-size="18">/camera</text>
+        <rect x="330" y="60" width="260" height="72" fill="#171A0C" stroke="#C8F53B" stroke-width="1.5"/>
+        <text x="460" y="96" text-anchor="middle" fill="#C8F53B" font-family="Space Mono, monospace" font-size="18">/policy</text>
+        <text x="460" y="118" text-anchor="middle" fill="#9A9B92" font-family="Space Mono, monospace" font-size="12">vla · diffusion · IL</text>
+        <rect x="700" y="60" width="200" height="72" fill="none" stroke="#EDEDE6" stroke-width="1.5"/>
+        <text x="800" y="102" text-anchor="middle" fill="#EDEDE6" font-family="Space Mono, monospace" font-size="18">/arm</text>
+        <rect x="1000" y="60" width="180" height="72" fill="none" stroke="#EDEDE6" stroke-width="1.5" stroke-dasharray="5 5"/>
+        <text x="1090" y="102" text-anchor="middle" fill="#EDEDE6" font-family="Space Mono, monospace" font-size="18">/world</text>
+        <line class="edge" x1="220" y1="96" x2="326" y2="96" stroke="#9A9B92" stroke-width="1.5" marker-end="url(#ah)"/>
+        <line class="edge" x1="590" y1="96" x2="696" y2="96" stroke="#9A9B92" stroke-width="1.5" marker-end="url(#ah)"/>
+        <line class="edge" x1="900" y1="96" x2="996" y2="96" stroke="#9A9B92" stroke-width="1.5" marker-end="url(#ah)"/>
+        <path class="edge feedback" d="M1090 132 L1090 210 L120 210 L120 136" fill="none" stroke="#9A9B92" stroke-width="1.5" stroke-dasharray="4 6" marker-end="url(#ah)"/>
+        <text x="605" y="240" text-anchor="middle" fill="#9A9B92" font-family="Space Mono, monospace" font-size="13">feedback — repeat until it stops dropping things</text>
+      </svg>
+    </div>
+  </section>
+
+  <section class="work reveal" id="work">
+    <div class="label">$ ls ~/work</div>
+    <div class="work-rows">
+      <div class="work-row"><span class="work-years">2026</span><span class="work-name">manav_robotics/</span><span class="work-desc">VLA + diffusion on a humanoid, reward-model data filtering</span></div>
+      <div class="work-row"><span class="work-years">2025–26</span><span class="work-name">inspire_lab/</span><span class="work-desc">scene graphs, object-level maps, multi-robot nav</span></div>
+      <div class="work-row"><span class="work-years">2025</span><span class="work-name">hiro_lab_iisc/</span><span class="work-desc">bimanual IL, dynamic throwing, bin packing</span></div>
+      <div class="work-row"><span class="work-years">2024–25</span><span class="work-name">criss_robotics/</span><span class="work-desc">software lead, 3rd at ERC 2025 (Remote)</span></div>
+    </div>
+  </section>
+
+  <section class="cols reveal">
+    <div class="col">
+      <div class="label">$ cat papers.txt</div>
+      <a class="paper" href="#"><span class="venue">[CoRL '26 · SemRob]</span> IMBench: A Benchmark for Intuitive Manipulation</a>
+      <a class="paper" href="#"><span class="venue">[NeurIPS '25 · LAW]</span> DiffusionPack: Bin Packing with Custom Human Preferences</a>
+    </div>
+    <div class="col">
+      <div class="label">$ tail -n 3 log/</div>
+      {%- for post in recent %}
+      <a class="log-link{% unless forloop.first %} dim{% endunless %}" href="{{ post.url | relative_url }}">{{ post.number | default: 0 | prepend: '00' | slice: -3, 3 }} · {{ post.title }}</a>
+      {%- endfor %}
+    </div>
+  </section>
+  </main>
+
+  <footer class="foot reveal">
+    <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+    <div class="foot-links">
+      <a href="{{ site.github_url }}" target="_blank" rel="noopener">github</a>
+      <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener">linkedin</a>
+    </div>
+  </footer>
+
+</div>

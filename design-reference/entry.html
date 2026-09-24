@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Log entry</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0E0F0C}
+a{color:#EDEDE6;text-decoration:none}a:hover{color:#C8F53B}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1300px; box-sizing: border-box; padding: 48px 96px; background: #0E0F0C; color: #EDEDE6; font-family: 'JetBrains Mono', ui-monospace, monospace; display: flex; flex-direction: column; gap: 80px">
+
+<nav style="display: flex; justify-content: space-between; align-items: center; font-size: 14px">
+<a href="Log.dc.html" style="color: #9A9B92">← the log</a>
+<a href="Terminal.dc.html" style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 20px">gb.</a>
+</nav>
+
+<article style="width: 720px; align-self: center; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; gap: 20px; font-size: 13px; color: #9A9B92"><span style="color: #C8F53B">#014</span><span>[Date]</span><span>papers</span><span>4 min</span></div>
+<h1 style="margin: 0; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 64px; line-height: 1; letter-spacing: -0.03em">Notes on action chunking</h1>
+<div style="display: flex; flex-direction: column; gap: 22px; font-size: 16px; line-height: 1.8; color: #CFCFC7">
+<p style="margin: 0">[Sample entry — replace with your own.] Instead of predicting one action per timestep, a chunked policy predicts the next k actions at once and executes them before querying again.</p>
+<p style="margin: 0">Fewer decisions per episode means fewer chances for small errors to compound — which is exactly where single-step imitation learning tends to fall apart.</p>
+<pre style="margin: 0; padding: 24px; background: #171814; border: 1px solid #2A2B26; border-radius: 12px; font-size: 14px; line-height: 1.6; color: #EDEDE6; overflow-x: auto">actions = policy(obs)[:k]   # k-step chunk
+for a in actions:
+    robot.step(a)</pre>
+<div style="height: 260px; border: 1px dashed #3A3B35; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #6B6C64; font-size: 13px">[Figure / video]</div>
+<p style="margin: 0; color: #9A9B92">Today I learned: [one-line takeaway].</p>
+</div>
+</article>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1300}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

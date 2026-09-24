@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Log</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0E0F0C}
+a{color:#EDEDE6;text-decoration:none}a:hover{color:#C8F53B}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1300px; box-sizing: border-box; padding: 48px 96px; background: #0E0F0C; color: #EDEDE6; font-family: 'JetBrains Mono', ui-monospace, monospace; display: flex; flex-direction: column; gap: 96px">
+
+<nav style="display: flex; justify-content: space-between; align-items: center; font-size: 14px">
+<a href="Terminal.dc.html" style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 20px">gb.</a>
+<div style="display: flex; gap: 40px; align-items: center">
+<a href="Terminal.dc.html">work</a>
+<a href="Log.dc.html" style="color: #C8F53B">log</a>
+<a href="#" style="padding: 12px 20px; border: 1px solid #C8F53B; color: #C8F53B; border-radius: 999px">cv ↓</a>
+</div>
+</nav>
+
+<header style="display: flex; justify-content: space-between; align-items: flex-end; gap: 64px">
+<h1 style="margin: 0; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 180px; line-height: 0.86; letter-spacing: -0.04em; text-transform: uppercase">The<br><span style="color: transparent; -webkit-text-stroke: 2px #EDEDE6">log</span><span style="color: #C8F53B">.</span></h1>
+<p style="margin: 0; max-width: 380px; font-size: 16px; line-height: 1.7; color: #9A9B92">Daily notes on whatever I learned today — papers, bugs, builds, half-formed ideas.</p>
+</header>
+
+<div style="display: flex; gap: 12px; font-size: 14px">
+<button type="button" style="min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid #C8F53B; background: #C8F53B; color: #0E0F0C; font-family: inherit; font-size: 14px">all</button>
+<button type="button" style="min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid #3A3B35; background: transparent; color: #EDEDE6; font-family: inherit; font-size: 14px">notes</button>
+<button type="button" style="min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid #3A3B35; background: transparent; color: #EDEDE6; font-family: inherit; font-size: 14px">papers</button>
+<button type="button" style="min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid #3A3B35; background: transparent; color: #EDEDE6; font-family: inherit; font-size: 14px">builds</button>
+</div>
+
+<div style="display: flex; flex-direction: column; border-top: 1px solid #2A2B26">
+<a href="Post.dc.html" style="display: grid; grid-template-columns: 120px minmax(0, 1fr) 140px 140px; gap: 32px; align-items: baseline; padding: 28px 0; border-bottom: 1px solid #2A2B26">
+<span style="color: #C8F53B; font-size: 14px">#014</span>
+<span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 28px">Notes on action chunking</span>
+<span style="color: #9A9B92; font-size: 13px">papers</span>
+<span style="color: #9A9B92; font-size: 13px; text-align: right">[Date]</span>
+</a>
+<a href="#" style="display: grid; grid-template-columns: 120px minmax(0, 1fr) 140px 140px; gap: 32px; align-items: baseline; padding: 28px 0; border-bottom: 1px solid #2A2B26">
+<span style="color: #9A9B92; font-size: 14px">#013</span>
+<span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 28px">[Entry title]</span>
+<span style="color: #9A9B92; font-size: 13px">builds</span>
+<span style="color: #9A9B92; font-size: 13px; text-align: right">[Date]</span>
+</a>
+<a href="#" style="display: grid; grid-template-columns: 120px minmax(0, 1fr) 140px 140px; gap: 32px; align-items: baseline; padding: 28px 0; border-bottom: 1px solid #2A2B26">
+<span style="color: #9A9B92; font-size: 14px">#012</span>
+<span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 28px">[Entry title]</span>
+<span style="color: #9A9B92; font-size: 13px">notes</span>
+<span style="color: #9A9B92; font-size: 13px; text-align: right">[Date]</span>
+</a>
+<a href="#" style="display: grid; grid-template-columns: 120px minmax(0, 1fr) 140px 140px; gap: 32px; align-items: baseline; padding: 28px 0; border-bottom: 1px solid #2A2B26">
+<span style="color: #9A9B92; font-size: 14px">#011</span>
+<span style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 28px">[Entry title]</span>
+<span style="color: #9A9B92; font-size: 13px">notes</span>
+<span style="color: #9A9B92; font-size: 13px; text-align: right">[Date]</span>
+</a>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1300}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+---
+layout: default
+title: The Log
+description: Daily notes on whatever I learned today — papers, bugs, builds, half-formed ideas.
+permalink: /log/
+fonts: log
+body_class: page-log
+scripts:
+  - /assets/js/log-filter.js
+---
+<div class="shell shell-log">
+
+  <nav class="nav">
+    <a class="logo" href="{{ '/' | relative_url }}">gb.</a>
+    <div class="nav-links">
+      <a href="{{ '/#work' | relative_url }}">work</a>
+      <a class="is-current" href="{{ '/log/' | relative_url }}" aria-current="page">log</a>
+      <a class="nav-cv-pill" href="{{ site.cv_url | relative_url }}" target="_blank" rel="noopener">cv ↓</a>
+    </div>
+  </nav>
+
+  <header class="log-head">
+    <h1>The<br><span class="outline">log</span><span class="dot">.</span></h1>
+    <p>Daily notes on whatever I learned today — papers, bugs, builds, half-formed ideas.</p>
+  </header>
+
+  <main>
+    <div class="filters" role="group" aria-label="Filter posts by tag">
+      <button type="button" class="pill is-active" data-tag="all" aria-pressed="true">all</button>
+      <button type="button" class="pill" data-tag="notes" aria-pressed="false">notes</button>
+      <button type="button" class="pill" data-tag="papers" aria-pressed="false">papers</button>
+      <button type="button" class="pill" data-tag="builds" aria-pressed="false">builds</button>
+    </div>
+
+    <div class="log-list">
+      {%- for post in site.posts %}
+      <a class="log-row" href="{{ post.url | relative_url }}" data-tag="{{ post.tag }}">
+        <span class="log-num{% if forloop.first %} is-new{% endif %}">#{% include num.html number=post.number %}</span>
+        <span class="log-title">{{ post.title }}</span>
+        <span class="log-tag">{{ post.tag }}</span>
+        <time class="log-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+      </a>
+      {%- endfor %}
+      <p class="log-empty" hidden>No posts with that tag yet.</p>
+    </div>
+  </main>
+
+</div>
