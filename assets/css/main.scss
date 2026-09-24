@@ -479,6 +479,14 @@ img {
 .entry-body ul,
 .entry-body ol { padding-left: 22px; }
 
+/* Scanned pages are transparent ink on the page background, so they get width
+   rather than a card: a radius would only round a box nobody can see. */
+.entry-body .note-page {
+  display: block;
+  width: 100%;
+  border-radius: 0;
+}
+
 .entry-body blockquote {
   padding-left: 20px;
   border-left: 1px solid var(--line-2);
