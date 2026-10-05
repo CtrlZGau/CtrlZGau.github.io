@@ -671,3 +671,65 @@ img {
     gap: 16px;
   }
 }
+
+/* ==========================================================================
+   Log entry panes — the transcription and the scanned pages
+   ========================================================================== */
+
+.entry-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.entry-tab {
+  padding: 8px 14px;
+  font-family: var(--mono-log);
+  font-size: 13px;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+.entry-tab:hover { color: var(--text); }
+
+.entry-tab.is-on {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.entry-tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Without JavaScript nothing is hidden, so both panes simply stack. */
+.entry-pane[hidden] { display: none; }
+
+/* KaTeX inherits the entry's colour rather than the library's default. */
+.entry-body .katex { color: var(--text); font-size: 1.02em; }
+.entry-body .katex-display {
+  margin: 20px 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 0;
+}
+
+/* Words the OCR could not read, and the model reconstructed. Marked so a
+   reader can tell them from what was actually written on the page. */
+.entry-body .guess {
+  border-bottom: 1px dotted var(--line-2);
+  color: var(--body);
+}
+
+.entry-body .guess--lost {
+  border-bottom: 0;
+  padding: 0 4px;
+  font-family: var(--mono-log);
+  font-size: 0.85em;
+  color: var(--muted);
+  background: var(--code-bg);
+}
