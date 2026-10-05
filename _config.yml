@@ -22,6 +22,8 @@ future: true
 
 markdown: kramdown
 kramdown:
+  # Leave $$...$$ as written; KaTeX renders it in the browser.
+  math_engine: nil
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     css_class: highlight
