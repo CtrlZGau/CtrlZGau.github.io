@@ -717,3 +717,19 @@ img {
   overflow-y: hidden;
   padding: 4px 0;
 }
+
+/* Words the OCR could not read, and the model reconstructed. Marked so a
+   reader can tell them from what was actually written on the page. */
+.entry-body .guess {
+  border-bottom: 1px dotted var(--line-2);
+  color: var(--body);
+}
+
+.entry-body .guess--lost {
+  border-bottom: 0;
+  padding: 0 4px;
+  font-family: var(--mono-log);
+  font-size: 0.85em;
+  color: var(--muted);
+  background: var(--code-bg);
+}
