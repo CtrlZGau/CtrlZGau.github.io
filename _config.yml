@@ -22,8 +22,10 @@ future: true
 
 markdown: kramdown
 kramdown:
-  # Leave $$...$$ as written; KaTeX renders it in the browser.
-  math_engine: nil
+  # A real YAML null, not the string "nil": kramdown reads "nil" as an engine
+  # name and tries to load a gem called kramdown-math-nil, which fails the
+  # build. With no engine it leaves .math elements for KaTeX to render.
+  math_engine: ~
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     css_class: highlight
